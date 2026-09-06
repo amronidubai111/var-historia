@@ -1,13 +1,13 @@
+// script.js
+
 const gallery = document.querySelector(".gallery");
 
-
 // =========================
-// 41 BILDER + 2 VIDEOS
+// SKAPA ALLA BILDER + VIDEOS
 // =========================
 
 for (let i = 1; i <= 41; i++) {
 
-    // BILD
     const card = document.createElement("div");
     card.className = "photo-card";
 
@@ -15,6 +15,7 @@ for (let i = 1; i <= 41; i++) {
 
     image.src = "./bild" + i + ".jpg";
     image.alt = "Minne " + i;
+    image.loading = "lazy";
 
     card.appendChild(image);
     gallery.appendChild(card);
@@ -33,6 +34,7 @@ for (let i = 1; i <= 41; i++) {
         video.muted = true;
         video.loop = true;
         video.playsInline = true;
+        video.preload = "metadata";
 
         videoCard.appendChild(video);
         gallery.appendChild(videoCard);
@@ -52,6 +54,7 @@ for (let i = 1; i <= 41; i++) {
         video.muted = true;
         video.loop = true;
         video.playsInline = true;
+        video.preload = "metadata";
 
         videoCard.appendChild(video);
         gallery.appendChild(videoCard);
@@ -60,7 +63,7 @@ for (let i = 1; i <= 41; i++) {
 
 
 // =========================
-// PILARNA
+// PILAR
 // =========================
 
 function flyttaBild(riktning) {
@@ -98,17 +101,15 @@ const videoObserver = new IntersectionObserver(
             } else {
 
                 video.pause();
-
             }
 
         });
 
     },
     {
-        threshold: 0.7
+        threshold: 0.6
     }
 );
-
 
 videos.forEach((video) => {
     videoObserver.observe(video);
@@ -116,7 +117,7 @@ videos.forEach((video) => {
 
 
 // =========================
-// STARTSIDA
+// KNAPP PÅ STARTSIDAN
 // =========================
 
 function visaHistoria() {
@@ -143,9 +144,6 @@ function visaOverraskning() {
         document.getElementById("hemligtMeddelande");
 
     if (meddelande) {
-
-        meddelande.textContent =
-            "Du betyder väldigt mycket för mig ❤️";
 
         meddelande.classList.add("show");
 
