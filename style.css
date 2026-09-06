@@ -1,3 +1,7 @@
+/* =========================
+   GRUND
+========================= */
+
 * {
     box-sizing: border-box;
 }
@@ -13,19 +17,28 @@ body {
     color: #444;
 }
 
-/* NAVBAR */
+
+/* =========================
+   NAVBAR
+========================= */
 
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
+
     width: 100%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 18px 7%;
+
     background: rgba(255, 255, 255, 0.9);
+
     backdrop-filter: blur(10px);
+
     z-index: 1000;
 }
 
@@ -49,15 +62,22 @@ body {
     color: #d6336c;
 }
 
-/* STARTSIDA */
+
+/* =========================
+   STARTSIDA
+========================= */
 
 .hero {
     min-height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    padding: 100px 25px;
+
+    padding: 30px;
+
     background: linear-gradient(
         135deg,
         #ffe1eb,
@@ -67,38 +87,46 @@ body {
 }
 
 .hero-content {
-    max-width: 800px;
+    max-width: 700px;
 }
 
 .small-text {
+    font-size: 16px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 14px;
     color: #b84c72;
 }
 
 h1 {
-    font-size: 75px;
-    color: #d6336c;
+    font-size: 70px;
     margin: 15px 0;
+    color: #d6336c;
 }
 
 .intro {
-    font-size: 23px;
-    line-height: 1.6;
+    font-size: 22px;
     margin-bottom: 35px;
 }
 
-/* KNAPPAR */
+
+/* =========================
+   KNAPPAR
+========================= */
 
 button {
     border: none;
+
     background: #d6336c;
     color: white;
+
     padding: 16px 30px;
+
     border-radius: 50px;
-    font-size: 17px;
+
+    font-size: 18px;
+
     cursor: pointer;
+
     transition: 0.3s;
 }
 
@@ -106,78 +134,129 @@ button:hover {
     transform: translateY(-3px);
 }
 
-/* MINNEN */
+
+/* =========================
+   SEKTIONER
+========================= */
 
 .section {
     max-width: 900px;
+
     margin: auto;
-    padding: 110px 25px;
+
+    padding: 100px 25px;
 }
 
 h2 {
     text-align: center;
+
     color: #d6336c;
-    font-size: 42px;
+
+    font-size: 40px;
+
+    margin-bottom: 10px;
 }
 
-.section-intro {
+.section-text {
     text-align: center;
-    color: #777;
+
     font-size: 18px;
+
     margin-bottom: 50px;
 }
 
-/* MINNESKORT */
 
-.memory {
+/* =========================
+   MINNESKORT
+========================= */
+
+.minne {
     background: white;
-    max-width: 650px;
-    margin: auto;
+
     padding: 35px;
+
+    margin: 25px auto;
+
+    max-width: 650px;
+
     border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    box-shadow:
+        0 10px 30px rgba(214, 51, 108, 0.08);
+
+    transition: 0.3s;
 }
 
-.memory h3 {
+.minne:hover {
+    transform: translateY(-5px);
+}
+
+.minne h3 {
     color: #d6336c;
+
     font-size: 26px;
+
+    margin-top: 10px;
 }
 
-.memory p {
+.minne p {
     line-height: 1.7;
 }
 
 .datum {
     color: #b84c72;
+
     font-size: 14px;
+
     font-weight: bold;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
 }
 
-/* BILDER */
+
+/* =========================
+   BILDER
+========================= */
 
 .gallery-section {
-    padding: 110px 0;
+    padding: 100px 0;
+
     background: #ffe5ee;
+
     text-align: center;
+
     overflow: hidden;
 }
 
 .gallery-wrapper {
     position: relative;
+
     width: 100%;
+
     display: flex;
+
     align-items: center;
 }
 
 .gallery {
     display: flex;
+
     gap: 20px;
+
     overflow-x: auto;
+
     overflow-y: hidden;
+
     width: 100%;
+
     padding: 30px 8%;
+
     scroll-behavior: smooth;
+
     scroll-snap-type: x mandatory;
+
     scrollbar-width: none;
 }
 
@@ -185,16 +264,22 @@ h2 {
     display: none;
 }
 
-/* BILDKORT */
-
 .photo-card {
     flex: 0 0 300px;
+
     height: 400px;
+
     background: white;
+
     padding: 10px;
+
     border-radius: 20px;
+
     scroll-snap-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
     transition: 0.3s;
 }
 
@@ -205,9 +290,13 @@ h2 {
 .photo-card img,
 .photo-card video {
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     border-radius: 15px;
+
     display: block;
 }
 
@@ -215,18 +304,25 @@ h2 {
     background: black;
 }
 
-/* PILAR */
-
 .gallery-button {
     position: absolute;
+
     z-index: 10;
+
     width: 55px;
+
     height: 55px;
+
     padding: 0;
+
     border-radius: 50%;
+
     font-size: 25px;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
 }
 
@@ -240,79 +336,104 @@ h2 {
 
 .gallery-help {
     color: #777;
+
     font-size: 14px;
+
     margin-top: 20px;
 }
 
-/* BREV */
 
-.letter-section {
+/* =========================
+   BREV
+========================= */
+
+.brev {
+    text-align: center;
+
+    padding: 100px 25px;
+
+    background: #ffe5ee;
+}
+
+.brev p {
+    max-width: 600px;
+
+    margin: 15px auto;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   ÖVERRASKNING
+========================= */
+
+.overraskning {
+    text-align: center;
+
     padding: 120px 25px;
+
+    background: #fff5f8;
 }
 
-.letter {
-    max-width: 700px;
-    margin: auto;
-    padding: 50px;
-    background: white;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+.overraskning p {
+    font-size: 19px;
+
+    line-height: 1.7;
 }
 
-.letter p {
-    line-height: 1.8;
-    font-size: 18px;
-}
-
-/* ÖVERRASKNING */
-
-.surprise-section {
-    padding: 130px 25px;
-    text-align: center;
-    background: linear-gradient(
-        135deg,
-        #ffd6e4,
-        #fff0f5
-    );
-}
-
-.hidden-message {
+#hemligtMeddelande {
     margin-top: 30px;
+
+    font-size: 24px;
+
     color: #d6336c;
-    font-size: 27px;
+
     font-weight: bold;
-    opacity: 0;
-    transition: 0.8s;
 }
 
-.hidden-message.show {
-    opacity: 1;
-}
 
-/* FOOTER */
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
-    padding: 35px;
+
+    padding: 30px;
+
     background: #d6336c;
+
     color: white;
 }
 
-/* MOBIL */
 
-@media (max-width: 700px) {
+/* =========================
+   MOBIL
+========================= */
+
+@media (max-width: 600px) {
 
     h1 {
-        font-size: 48px;
+        font-size: 45px;
     }
 
     h2 {
-        font-size: 34px;
+        font-size: 32px;
+    }
+
+    .intro {
+        font-size: 18px;
+    }
+
+    .minne {
+        padding: 25px;
     }
 
     .navbar {
-        padding: 15px 5%;
+        padding: 15px 20px;
     }
 
     .nav-links {
@@ -330,9 +451,5 @@ footer {
 
     .gallery-button {
         display: none;
-    }
-
-    .letter {
-        padding: 30px 20px;
     }
 }
