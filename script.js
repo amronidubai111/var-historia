@@ -6,23 +6,25 @@ const gallery = document.querySelector(".gallery");
 
 
 // =========================
-// SKAPA 41 BILDER
+// SKAPA 41 BILDER + 2 VIDEOS
 // =========================
 
 for (let i = 1; i <= 41; i++) {
 
-    const card = document.createElement("div");
+    // =========================
+    // BILD
+    // =========================
 
+    const card = document.createElement("div");
     card.className = "photo-card";
 
     const image = document.createElement("img");
 
-    image.src = "bilder/bild" + i + ".jpg";
-
+    // Bilderna ligger direkt i huvudmappen
+    image.src = "bild" + i + ".jpg";
     image.alt = "Minne " + i;
 
     card.appendChild(image);
-
     gallery.appendChild(card);
 
 
@@ -32,7 +34,20 @@ for (let i = 1; i <= 41; i++) {
 
     if (i === 2) {
 
-        skapaVideo("bilder/video1.mp4");
+        const videoCard = document.createElement("div");
+        videoCard.className = "photo-card";
+
+        const video = document.createElement("video");
+
+        video.src = "video1.mp4";
+
+        video.controls = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+
+        videoCard.appendChild(video);
+        gallery.appendChild(videoCard);
     }
 
 
@@ -42,41 +57,21 @@ for (let i = 1; i <= 41; i++) {
 
     if (i === 20) {
 
-        skapaVideo("bilder/video2.mp4");
+        const videoCard = document.createElement("div");
+        videoCard.className = "photo-card";
+
+        const video = document.createElement("video");
+
+        video.src = "video2.mp4";
+
+        video.controls = true;
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+
+        videoCard.appendChild(video);
+        gallery.appendChild(videoCard);
     }
-}
-
-
-// =========================
-// SKAPA VIDEO
-// =========================
-
-function skapaVideo(videoKalla) {
-
-    const videoCard =
-        document.createElement("div");
-
-    videoCard.className = "photo-card";
-
-
-    const video =
-        document.createElement("video");
-
-
-    video.src = videoKalla;
-
-    video.muted = true;
-
-    video.loop = true;
-
-    video.playsInline = true;
-
-    video.controls = true;
-
-
-    videoCard.appendChild(video);
-
-    gallery.appendChild(videoCard);
 }
 
 
@@ -86,84 +81,58 @@ function skapaVideo(videoKalla) {
 
 function flyttaBild(riktning) {
 
-    const bild =
-        document.querySelector(".photo-card");
-
+    const bild = document.querySelector(".photo-card");
 
     if (!bild) {
         return;
     }
 
-
-    const avstand =
-        bild.offsetWidth + 20;
-
+    const avstand = bild.offsetWidth + 20;
 
     gallery.scrollBy({
-
         left: avstand * riktning,
-
         behavior: "smooth"
-
     });
 }
 
 
 // =========================
-// AUTOPLAY NÄR VIDEO SYNs
+// AUTOPLAY FÖR VIDEOS
 // =========================
 
-const videos =
-    document.querySelectorAll(
-        ".photo-card video"
-    );
+const videos = document.querySelectorAll(".photo-card video");
 
+const videoObserver = new IntersectionObserver(
+    (entries) => {
 
-const videoObserver =
-    new IntersectionObserver(
+        entries.forEach((entry) => {
 
-        function (entries) {
+            const video = entry.target;
 
-            entries.forEach(
-                function (entry) {
+            if (entry.isIntersecting) {
 
-                    const video =
-                        entry.target;
+                video.play().catch(() => {
+                    // Webbläsaren kan blockera autoplay
+                });
 
+            } else {
 
-                    if (entry.isIntersecting) {
+                video.pause();
 
-                        video.play().catch(
-                            function () {
-                                // Autoplay stoppades
-                            }
-                        );
+            }
 
-                    } else {
+        });
 
-                        video.pause();
-
-                    }
-
-                }
-            );
-
-        },
-
-        {
-            threshold: 0.7
-        }
-
-    );
-
-
-videos.forEach(
-    function (video) {
-
-        videoObserver.observe(video);
-
+    },
+    {
+        threshold: 0.7
     }
 );
+
+
+videos.forEach((video) => {
+    videoObserver.observe(video);
+});
 
 
 // =========================
@@ -172,20 +141,15 @@ videos.forEach(
 
 function visaHistoria() {
 
-    const minnen =
-        document.getElementById("minnen");
+    const minnen = document.getElementById("minnen");
 
+    if (minnen) {
 
-    if (!minnen) {
-        return;
+        minnen.scrollIntoView({
+            behavior: "smooth"
+        });
+
     }
-
-
-    minnen.scrollIntoView({
-
-        behavior: "smooth"
-
-    });
 }
 
 
@@ -196,19 +160,14 @@ function visaHistoria() {
 function visaOverraskning() {
 
     const meddelande =
-        document.getElementById(
-            "hemligtMeddelande"
-        );
+        document.getElementById("hemligtMeddelande");
 
+    if (meddelande) {
 
-    if (!meddelande) {
-        return;
+        meddelande.textContent =
+            "Du betyder väldigt mycket för mig ❤️";
+
+        meddelande.classList.add("show");
+
     }
-
-
-    meddelande.textContent =
-        "Du betyder väldigt mycket för mig ❤️";
-
-
-    meddelande.classList.add("show");
 }
