@@ -1,12 +1,8 @@
 const gallery = document.querySelector(".gallery");
 
-
-/* =====================================
-   SKAPA ALLA 41 BILDER
-   ===================================== */
-
 if (gallery) {
 
+    // Skapa bilderna 1–41
     for (let i = 1; i <= 41; i++) {
 
         const card = document.createElement("div");
@@ -14,84 +10,58 @@ if (gallery) {
 
         const image = document.createElement("img");
 
-        /*
-        Bilderna ligger direkt i GitHub-repots huvudmapp.
-        Därför använder vi ./bild1.jpg osv.
-        */
-
         image.src = "./bild" + i + ".jpg";
-
         image.alt = "Minne " + i;
 
-        image.loading = "lazy";
-
         card.appendChild(image);
-
         gallery.appendChild(card);
 
 
-        /* =====================================
-           VIDEO 1 EFTER BILD 2
-           ===================================== */
-
+        // Video 1 efter bild 2
         if (i === 2) {
 
             const videoCard = document.createElement("div");
-
-            videoCard.className = "photo-card";
+            videoCard.className = "photo-card video-card";
 
             const video = document.createElement("video");
 
             video.src = "./video1.mp4";
-
             video.controls = true;
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
 
             videoCard.appendChild(video);
-
             gallery.appendChild(videoCard);
         }
 
 
-        /* =====================================
-           VIDEO 2 EFTER BILD 20
-           ===================================== */
-
+        // Video 2 efter bild 20
         if (i === 20) {
 
             const videoCard = document.createElement("div");
-
-            videoCard.className = "photo-card";
+            videoCard.className = "photo-card video-card";
 
             const video = document.createElement("video");
 
             video.src = "./video2.mp4";
-
             video.controls = true;
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
 
             videoCard.appendChild(video);
-
             gallery.appendChild(videoCard);
         }
     }
 
 
-    /* =====================================
-       FLYTTA GALLERIET
-       ===================================== */
-
+    // Föregående / nästa
     window.flyttaBild = function(riktning) {
 
         const bild = document.querySelector(".photo-card");
 
-        if (!bild) {
-            return;
-        }
+        if (!bild) return;
 
         const avstand = bild.offsetWidth + 20;
 
@@ -102,13 +72,8 @@ if (gallery) {
     };
 
 
-    /* =====================================
-       VIDEO SPELAS NÄR DEN SYNS
-       ===================================== */
-
-    const videos = document.querySelectorAll(
-        ".photo-card video"
-    );
+    // Autoplay när video syns
+    const videos = document.querySelectorAll(".photo-card video");
 
     const videoObserver = new IntersectionObserver(
         (entries) => {
@@ -137,18 +102,12 @@ if (gallery) {
 
 
     videos.forEach((video) => {
-
         videoObserver.observe(video);
-
     });
-
 }
 
 
-/* =====================================
-   KNAPPEN "VÅRA MINNEN"
-   ===================================== */
-
+// Knappen "Våra minnen"
 function visaHistoria() {
 
     const minnen = document.getElementById("minnen");
@@ -163,10 +122,7 @@ function visaHistoria() {
 }
 
 
-/* =====================================
-   ÖVERRASKNINGSKNAPPEN
-   ===================================== */
-
+// Knappen "En liten överraskning"
 function visaOverraskning() {
 
     const meddelande =
