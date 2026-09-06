@@ -11,8 +11,12 @@
 
 <body>
 
-    <!-- NAVBAR -->
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
     <header class="navbar">
+
         <div class="logo">
             Amr & Rosa ❤️
         </div>
@@ -23,10 +27,14 @@
             <a href="#brev">Brev</a>
             <a href="#overraskning">Överraskning</a>
         </nav>
+
     </header>
 
 
-    <!-- STARTSIDA -->
+    <!-- =========================
+         STARTSIDA
+    ========================= -->
+
     <section class="hero">
 
         <div class="hero-content">
@@ -54,20 +62,25 @@
 
     <main>
 
-        <!-- MINNESKORT -->
+
+        <!-- =========================
+             MINNEN
+        ========================= -->
+
         <section class="section" id="minnen">
 
             <h2>
                 Våra minnen 💕
             </h2>
 
-            <p class="section-intro">
+            <p class="section-text">
                 Några av de stunder jag aldrig vill glömma.
             </p>
 
 
             <!-- MINNESKORT 1 -->
-            <div class="memory">
+
+            <div class="minne">
 
                 <div class="datum">
                     12 AUGUSTI 2025
@@ -86,7 +99,8 @@
 
 
             <!-- MINNESKORT 2 -->
-            <div class="memory">
+
+            <div class="minne">
 
                 <div class="datum">
                     ETT FINT MINNE ❤️
@@ -97,15 +111,17 @@
                 </h3>
 
                 <p>
-                    Här kan du skriva om ett annat speciellt minne
-                    som betyder mycket för oss.
+                    Här kan du skriva om en annan speciell dag,
+                    ett roligt ögonblick eller ett minne som
+                    betyder mycket för oss.
                 </p>
 
             </div>
 
 
             <!-- MINNESKORT 3 -->
-            <div class="memory">
+
+            <div class="minne">
 
                 <div class="datum">
                     ÄNNU ETT MINNE 💕
@@ -116,8 +132,28 @@
                 </h3>
 
                 <p>
-                    Alla små stunder, skratt och fina ögonblick
-                    som vi aldrig vill glömma.
+                    Alla små stunder tillsammans blir till stora
+                    minnen som vi aldrig vill glömma.
+                </p>
+
+            </div>
+
+
+            <!-- MINNESKORT 4 -->
+
+            <div class="minne">
+
+                <div class="datum">
+                    ETT ÖGONBLICK ❤️
+                </div>
+
+                <h3>
+                    Ett ögonblick jag minns
+                </h3>
+
+                <p>
+                    Ett speciellt ögonblick som alltid kommer att
+                    ha en plats i vår historia.
                 </p>
 
             </div>
@@ -125,7 +161,10 @@
         </section>
 
 
-        <!-- ALLA BILDER -->
+        <!-- =========================
+             BILDER OCH VIDEOS
+        ========================= -->
+
         <section class="gallery-section" id="bilder">
 
             <h2>
@@ -148,7 +187,7 @@
 
 
                 <div class="gallery">
-                    <!-- Bilder och videos läggs in automatiskt med JavaScript -->
+                    <!-- Bilder och videos läggs automatiskt in med JavaScript -->
                 </div>
 
 
@@ -164,36 +203,38 @@
         </section>
 
 
-        <!-- BREV -->
-        <section class="letter-section" id="brev">
+        <!-- =========================
+             BREV
+        ========================= -->
 
-            <div class="letter">
+        <section class="brev" id="brev">
 
-                <h2>
-                    ❤️ Till Rosa ❤️
-                </h2>
+            <h2>
+                ❤️ Till Rosa ❤️
+            </h2>
 
-                <p>
-                    Tack för alla fina stunder, skratt och minnen.
-                </p>
+            <p>
+                Tack för alla fina stunder, skratt och minnen.
+            </p>
 
-                <p>
-                    Jag hoppas att vi får skapa många fler
-                    tillsammans.
-                </p>
+            <p>
+                Jag hoppas att vi får skapa många fler
+                tillsammans.
+            </p>
 
-                <p>
-                    Du är en väldigt viktig person för mig ❤️
-                </p>
-
-            </div>
+            <p>
+                Du är en väldigt viktig person för mig ❤️
+            </p>
 
         </section>
 
 
-        <!-- ÖVERRASKNING -->
+        <!-- =========================
+             ÖVERRASKNING
+        ========================= -->
+
         <section
-            class="surprise-section"
+            class="overraskning"
             id="overraskning"
         >
 
@@ -201,21 +242,25 @@
                 En liten överraskning 🎁
             </h2>
 
+            <p>
+                Klicka på knappen för att öppna den ❤️
+            </p>
+
             <button onclick="visaOverraskning()">
                 Öppna ❤️
             </button>
 
-            <div
-                id="hemligtMeddelande"
-                class="hidden-message"
-            ></div>
+            <p id="hemligtMeddelande"></p>
 
         </section>
 
     </main>
 
 
-    <!-- FOOTER -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
 
         <p>
@@ -229,7 +274,10 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
     <script src="./script.js"></script>
 
 </body>
