@@ -12,61 +12,82 @@
 
 <body>
 
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
     <nav class="navbar">
 
         <div class="logo">
-            Vår historia ❤️
+            Amr + Rosa ❤️
         </div>
 
         <div class="nav-links">
+
             <a href="#hem">Hem</a>
+
             <a href="#minnen">Minnen</a>
+
             <a href="#bilder">Bilder</a>
+
             <a href="#brev">Brev</a>
+
+            <a href="#overraskning">Överraskning</a>
+
         </div>
 
     </nav>
 
 
-    <header id="hem" class="hero">
+    <!-- =========================
+         STARTSIDA
+    ========================= -->
+
+    <section class="hero" id="hem">
 
         <div class="hero-content">
 
-            <p class="small-text">
-                En liten plats för oss
-            </p>
+            <div class="small-text">
+                AMR + ROSA
+            </div>
 
             <h1>
                 Vår historia ❤️
             </h1>
 
             <p class="intro">
-                Alla våra finaste minnen,
-                samlade på ett ställe.
+                En liten plats för alla våra finaste minnen.
             </p>
 
             <button onclick="visaHistoria()">
-                Börja vår resa 💌
+                Se vår historia 💕
             </button>
 
         </div>
 
-    </header>
+    </section>
 
 
-    <section id="minnen" class="section">
+    <!-- =========================
+         MINNEN
+    ========================= -->
 
-        <h2>Våra minnen 💕</h2>
+    <section class="section" id="minnen">
+
+        <h2>
+            Våra minnen 💕
+        </h2>
 
         <p class="section-intro">
             Några av de stunder jag aldrig vill glömma.
         </p>
 
+
         <div class="memory">
 
-            <p class="datum">
+            <div class="datum">
                 12 augusti 2025
-            </p>
+            </div>
 
             <h3>
                 Vårt första speciella minne 💕
@@ -84,14 +105,16 @@
 
     <!-- =========================
          BILDER
-    ========================== -->
+    ========================= -->
 
-    <section id="bilder" class="gallery-section">
+    <section class="gallery-section" id="bilder">
 
-        <h2>Våra bilder 📸</h2>
+        <h2>
+            Våra bilder 📸
+        </h2>
 
         <p class="section-intro">
-            41 bilder från vår historia ❤️
+            41 minnen och 2 små videor ❤️
         </p>
 
 
@@ -105,9 +128,7 @@
 
 
             <div class="gallery">
-
-                <!-- BILDERNA SKAPAS AUTOMATISKT AV JAVASCRIPT -->
-
+                <!-- Bilder och videos skapas automatiskt -->
             </div>
 
 
@@ -121,7 +142,7 @@
 
 
         <p class="gallery-help">
-            ← Dra åt sidan → eller använd knapparna
+            Svep åt sidan eller använd pilarna ❤️
         </p>
 
     </section>
@@ -129,27 +150,29 @@
 
     <!-- =========================
          BREV
-    ========================== -->
+    ========================= -->
 
-    <section id="brev" class="letter-section">
+    <section class="letter-section" id="brev">
 
         <div class="letter">
 
-            <p class="small-text">
-                Till dig ❤️
-            </p>
-
             <h2>
-                Ett litet brev
+                Ett brev till dig 💌
             </h2>
 
             <p>
-                Jag ville skapa den här sidan för att samla
-                några av våra finaste minnen på ett ställe.
+                Rosa, jag ville skapa den här lilla sidan
+                för att samla några av våra finaste minnen.
             </p>
 
             <p>
-                Tack för alla fina stunder. ❤️
+                Varje bild påminner mig om en speciell stund
+                och jag hoppas att du tycker om den här
+                lilla överraskningen. ❤️
+            </p>
+
+            <p>
+                Tack för alla fina minnen.
             </p>
 
         </div>
@@ -159,20 +182,22 @@
 
     <!-- =========================
          ÖVERRASKNING
-    ========================== -->
+    ========================= -->
 
-    <section class="surprise-section">
+    <section
+        class="surprise-section"
+        id="overraskning">
 
         <h2>
-            En sista sak... 👀
+            En sista sak... ❤️
         </h2>
 
         <p>
-            Jag har sparat något här.
+            Tryck på knappen.
         </p>
 
         <button onclick="visaOverraskning()">
-            Öppna 🎁
+            Öppna överraskningen 💕
         </button>
 
         <div
@@ -183,14 +208,26 @@
     </section>
 
 
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
     <footer>
 
         <p>
-            Gjord med ❤️
+            Amr + Rosa ❤️
+        </p>
+
+        <p>
+            Våra minnen för alltid.
         </p>
 
     </footer>
 
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script src="script.js"></script>
 
