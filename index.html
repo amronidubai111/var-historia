@@ -1,236 +1,106 @@
 <!DOCTYPE html>
 <html lang="sv">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vår historia ❤️</title>
+    <title>Amr & Rosa ❤️ Våra minnen</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    <!-- =========================
-         NAVBAR
-    ========================= -->
+    <header>
+        <h1>Amr & Rosa ❤️</h1>
+        <p>Vår historia och våra finaste minnen</p>
 
-    <nav class="navbar">
-
-        <div class="logo">
-            Amr + Rosa ❤️
-        </div>
-
-        <div class="nav-links">
-
-            <a href="#hem">Hem</a>
-
-            <a href="#minnen">Minnen</a>
-
-            <a href="#bilder">Bilder</a>
-
-            <a href="#brev">Brev</a>
-
-            <a href="#overraskning">Överraskning</a>
-
-        </div>
-
-    </nav>
-
-
-    <!-- =========================
-         STARTSIDA
-    ========================= -->
-
-    <section class="hero" id="hem">
-
-        <div class="hero-content">
-
-            <div class="small-text">
-                AMR + ROSA
-            </div>
-
-            <h1>
-                Vår historia ❤️
-            </h1>
-
-            <p class="intro">
-                En liten plats för alla våra finaste minnen.
-            </p>
-
-            <button onclick="visaHistoria()">
-                Se vår historia 💕
-            </button>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         MINNEN
-    ========================= -->
-
-    <section class="section" id="minnen">
-
-        <h2>
+        <button onclick="visaHistoria()">
             Våra minnen 💕
-        </h2>
-
-        <p class="section-intro">
-            Några av de stunder jag aldrig vill glömma.
-        </p>
-
-
-        <div class="memory">
-
-            <div class="datum">
-                12 augusti 2025
-            </div>
-
-            <h3>
-                Vårt första speciella minne 💕
-            </h3>
-
-            <p>
-                Här kan du skriva om ert första speciella
-                minne och varför det betyder så mycket.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         BILDER
-    ========================= -->
-
-    <section class="gallery-section" id="bilder">
-
-        <h2>
-            Våra bilder 📸
-        </h2>
-
-        <p class="section-intro">
-            41 minnen och 2 små videor ❤️
-        </p>
-
-
-        <div class="gallery-wrapper">
-
-            <button
-                class="gallery-button left"
-                onclick="flyttaBild(-1)">
-                ❮
-            </button>
-
-
-            <div class="gallery">
-                <!-- Bilder och videos skapas automatiskt -->
-            </div>
-
-
-            <button
-                class="gallery-button right"
-                onclick="flyttaBild(1)">
-                ❯
-            </button>
-
-        </div>
-
-
-        <p class="gallery-help">
-            Svep åt sidan eller använd pilarna ❤️
-        </p>
-
-    </section>
-
-
-    <!-- =========================
-         BREV
-    ========================= -->
-
-    <section class="letter-section" id="brev">
-
-        <div class="letter">
-
-            <h2>
-                Ett brev till dig 💌
-            </h2>
-
-            <p>
-                Rosa, jag ville skapa den här lilla sidan
-                för att samla några av våra finaste minnen.
-            </p>
-
-            <p>
-                Varje bild påminner mig om en speciell stund
-                och jag hoppas att du tycker om den här
-                lilla överraskningen. ❤️
-            </p>
-
-            <p>
-                Tack för alla fina minnen.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         ÖVERRASKNING
-    ========================= -->
-
-    <section
-        class="surprise-section"
-        id="overraskning">
-
-        <h2>
-            En sista sak... ❤️
-        </h2>
-
-        <p>
-            Tryck på knappen.
-        </p>
-
-        <button onclick="visaOverraskning()">
-            Öppna överraskningen 💕
         </button>
 
-        <div
-            id="hemligtMeddelande"
-            class="hidden-message">
-        </div>
+        <button onclick="visaOverraskning()">
+            En liten överraskning 🎁
+        </button>
+    </header>
 
-    </section>
+    <main>
+
+        <section class="intro">
+            <h2>Våra minnen 💕</h2>
+
+            <p>
+                Några av de stunder jag aldrig vill glömma.
+            </p>
+
+            <p class="datum">
+                12 augusti 2025
+            </p>
+
+            <h3>Vårt första speciella minne 💕</h3>
+
+            <p>
+                Här börjar vår historia. En dag som blev början på
+                många fina minnen tillsammans.
+            </p>
+        </section>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+        <section id="minnen">
+
+            <h2>Alla våra bilder 📸</h2>
+
+            <p class="scroll-text">
+                Svep åt sidan för att se alla våra minnen ❤️
+            </p>
+
+            <div class="gallery">
+
+                <!-- Bilder och videos skapas automatiskt av JavaScript -->
+
+            </div>
+
+            <div class="buttons">
+                <button onclick="flyttaBild(-1)">
+                    ← Föregående
+                </button>
+
+                <button onclick="flyttaBild(1)">
+                    Nästa →
+                </button>
+            </div>
+
+        </section>
+
+
+        <section class="message">
+
+            <h2>❤️ Till Rosa ❤️</h2>
+
+            <p>
+                Tack för alla fina stunder, skratt och minnen.
+                Jag hoppas att vi får skapa många fler tillsammans.
+            </p>
+
+            <p>
+                Du är en väldigt viktig person för mig ❤️
+            </p>
+
+        </section>
+
+
+        <div id="hemligtMeddelande"></div>
+
+    </main>
+
 
     <footer>
-
-        <p>
-            Amr + Rosa ❤️
-        </p>
-
-        <p>
-            Våra minnen för alltid.
-        </p>
-
+        <p>Amr & Rosa ❤️</p>
+        <p>Vår historia började den 12 augusti 2025.</p>
     </footer>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
-
-    <script src="script.js"></script>
+    <script src="./script.js"></script>
 
 </body>
-
 </html>
