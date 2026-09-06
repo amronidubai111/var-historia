@@ -10,260 +10,120 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #fff5f8;
-    color: #444;
+    color: #333;
 }
 
 
-/* =========================
-   NAVBAR
-========================= */
+/* HEADER */
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 18px 7%;
-
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(10px);
-
-    z-index: 1000;
-}
-
-.logo {
-    color: #d6336c;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.nav-links {
-    display: flex;
-    gap: 25px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #555;
-}
-
-.nav-links a:hover {
-    color: #d6336c;
-}
-
-
-/* =========================
-   STARTSIDA
-========================= */
-
-.hero {
-    min-height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+header {
     text-align: center;
-
-    padding: 100px 25px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffe1eb,
-            #fff5f8,
-            #ffd6e4
-        );
+    padding: 60px 20px;
+    background: #ffd6e3;
 }
 
-.hero-content {
-    max-width: 800px;
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
 }
 
-.small-text {
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    font-size: 14px;
-    color: #b84c72;
-}
-
-h1 {
-    font-size: 75px;
-    color: #d6336c;
-    margin: 15px 0;
-}
-
-.intro {
-    font-size: 23px;
-    line-height: 1.6;
-    margin-bottom: 35px;
+header p {
+    font-size: 20px;
+    margin-bottom: 30px;
 }
 
 
-/* =========================
-   KNAPPAR
-========================= */
+/* KNAPPAR */
 
 button {
     border: none;
-    background: #d6336c;
+    padding: 12px 20px;
+    margin: 5px;
+    border-radius: 25px;
+    background: #ff6f9c;
     color: white;
-
-    padding: 16px 30px;
-
-    border-radius: 50px;
-
-    font-size: 17px;
-
+    font-size: 16px;
     cursor: pointer;
-
-    transition: 0.3s;
 }
 
 button:hover {
-    transform: translateY(-3px);
+    opacity: 0.85;
 }
 
 
-/* =========================
-   MINNEN
-========================= */
+/* INTRO */
 
-.section {
-    max-width: 900px;
-    margin: auto;
-    padding: 110px 25px;
-}
-
-h2 {
+.intro {
     text-align: center;
-    color: #d6336c;
-    font-size: 42px;
+    padding: 50px 20px;
 }
 
-.section-intro {
-    text-align: center;
-    color: #777;
-    font-size: 18px;
-    margin-bottom: 50px;
+.intro h2 {
+    font-size: 32px;
 }
 
-.memory {
-    background: white;
-
-    max-width: 650px;
-
-    margin: auto;
-
-    padding: 35px;
-
-    border-radius: 25px;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.06);
-}
-
-.memory h3 {
-    color: #d6336c;
-    font-size: 26px;
-}
-
-.memory p {
-    line-height: 1.7;
+.intro h3 {
+    font-size: 24px;
+    margin-top: 30px;
 }
 
 .datum {
-    color: #b84c72;
-    font-size: 14px;
     font-weight: bold;
+    font-size: 20px;
+    margin-top: 25px;
 }
 
 
-/* =========================
-   GALLERI
-========================= */
+/* MINNEN */
 
-.gallery-section {
-    padding: 110px 0;
-
-    background: #ffe5ee;
-
+#minnen {
+    padding: 40px 20px;
     text-align: center;
-
-    overflow: hidden;
 }
 
-.gallery-wrapper {
-    position: relative;
-
-    width: 100%;
-
-    display: flex;
-    align-items: center;
+#minnen h2 {
+    font-size: 32px;
 }
+
+.scroll-text {
+    margin-bottom: 25px;
+}
+
+
+/* GALLERI */
 
 .gallery {
     display: flex;
-
     gap: 20px;
 
     overflow-x: auto;
     overflow-y: hidden;
 
-    width: 100%;
-
-    padding: 30px 8%;
+    padding: 20px 10px 30px;
 
     scroll-behavior: smooth;
 
-    scroll-snap-type: x mandatory;
-
-    scrollbar-width: none;
-}
-
-.gallery::-webkit-scrollbar {
-    display: none;
+    -webkit-overflow-scrolling: touch;
 }
 
 
-/* =========================
-   BILDER + VIDEO-KORT
-========================= */
+/* KORT */
 
 .photo-card {
     flex: 0 0 280px;
-
     height: 360px;
-
-    background: white;
-
-    padding: 8px;
 
     border-radius: 20px;
 
-    scroll-snap-align: center;
-
-    box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.08);
-
-    transition: 0.3s;
-
     overflow: hidden;
+
+    background: white;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-.photo-card:hover {
-    transform: translateY(-7px);
-}
 
-
-/* =========================
-   BILDER
-========================= */
+/* BILDER */
 
 .photo-card img {
     width: 100%;
@@ -271,181 +131,101 @@ h2 {
 
     object-fit: cover;
 
-    border-radius: 14px;
-
     display: block;
 }
 
 
-/* =========================
-   VIDEOS
-========================= */
+/* VIDEOS */
+
+.video-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .photo-card video {
     width: 100%;
     height: 100%;
 
-    object-fit: cover;
+    object-fit: contain;
 
-    border-radius: 14px;
-
-    display: block;
+    background: black;
 }
 
 
-/* =========================
-   PILAR
-========================= */
+/* KNAPPAR UNDER GALLERI */
 
-.gallery-button {
-    position: absolute;
-
-    z-index: 10;
-
-    width: 55px;
-    height: 55px;
-
-    padding: 0;
-
-    border-radius: 50%;
-
-    font-size: 25px;
-
-    display: flex;
-
-    justify-content: center;
-    align-items: center;
-}
-
-.gallery-button.left {
-    left: 20px;
-}
-
-.gallery-button.right {
-    right: 20px;
-}
-
-.gallery-help {
-    color: #777;
-    font-size: 14px;
-    margin-top: 20px;
+.buttons {
+    text-align: center;
+    margin-top: 10px;
 }
 
 
-/* =========================
-   BREV
-========================= */
+/* MEDDELANDE */
 
-.letter-section {
-    padding: 120px 25px;
-}
-
-.letter {
+.message {
+    text-align: center;
+    padding: 70px 20px;
     max-width: 700px;
-
     margin: auto;
-
-    padding: 50px;
-
-    background: white;
-
-    border-radius: 25px;
-
-    text-align: center;
-
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.06);
 }
 
-.letter p {
-    line-height: 1.8;
+.message h2 {
+    font-size: 30px;
+}
+
+.message p {
     font-size: 18px;
+    line-height: 1.6;
 }
 
 
-/* =========================
-   ÖVERRASKNING
-========================= */
+/* HEMLIGT MEDDELANDE */
 
-.surprise-section {
-    padding: 130px 25px;
-
+#hemligtMeddelande {
     text-align: center;
 
-    background:
-        linear-gradient(
-            135deg,
-            #ffd6e4,
-            #fff0f5
-        );
-}
-
-.hidden-message {
-    margin-top: 30px;
-
-    color: #d6336c;
-
-    font-size: 27px;
-
+    font-size: 26px;
     font-weight: bold;
 
+    padding: 40px 20px;
+
     opacity: 0;
+    transform: scale(0.8);
 
-    transition: 0.8s;
+    transition: 0.5s;
 }
 
-.hidden-message.show {
+#hemligtMeddelande.show {
     opacity: 1;
+    transform: scale(1);
 }
 
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 footer {
     text-align: center;
-
-    padding: 35px;
-
-    background: #d6336c;
-
-    color: white;
+    padding: 30px 20px;
+    background: #ffd6e3;
 }
 
 
-/* =========================
-   MOBIL
-========================= */
+/* MOBIL */
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
 
-    h1 {
-        font-size: 48px;
+    header h1 {
+        font-size: 32px;
     }
 
-    h2 {
-        font-size: 34px;
-    }
-
-    .nav-links {
-        gap: 10px;
-    }
-
-    .nav-links a {
-        font-size: 12px;
+    header p {
+        font-size: 17px;
     }
 
     .photo-card {
-        flex: 0 0 230px;
-        height: 310px;
+        flex: 0 0 240px;
+        height: 320px;
     }
 
-    .gallery-button {
-        display: none;
-    }
-
-    .letter {
-        padding: 30px 20px;
-    }
 }
