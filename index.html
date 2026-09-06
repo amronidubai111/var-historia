@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vår historia ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Vår historia ❤️
+        </div>
+
+        <div class="nav-links">
+            <a href="#hem">Hem</a>
+            <a href="#minnen">Minnen</a>
+            <a href="#bilder">Bilder</a>
+            <a href="#brev">Brev</a>
+        </div>
+
+    </nav>
+
+
+    <header id="hem" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-text">
+                En liten plats för oss
+            </p>
+
+            <h1>
+                Vår historia ❤️
+            </h1>
+
+            <p class="intro">
+                Alla våra finaste minnen,
+                samlade på ett ställe.
+            </p>
+
+            <button onclick="visaHistoria()">
+                Börja vår resa 💌
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <section id="minnen" class="section">
+
+        <h2>Våra minnen 💕</h2>
+
+        <p class="section-intro">
+            Några av de stunder jag aldrig vill glömma.
+        </p>
+
+        <div class="memory">
+
+            <p class="datum">
+                12 augusti 2025
+            </p>
+
+            <h3>
+                Vårt första speciella minne 💕
+            </h3>
+
+            <p>
+                Här kan du skriva om ert första speciella
+                minne och varför det betyder så mycket.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BILDER
+    ========================== -->
+
+    <section id="bilder" class="gallery-section">
+
+        <h2>Våra bilder 📸</h2>
+
+        <p class="section-intro">
+            41 bilder från vår historia ❤️
+        </p>
+
+
+        <div class="gallery-wrapper">
+
+            <button
+                class="gallery-button left"
+                onclick="flyttaBild(-1)">
+                ❮
+            </button>
+
+
+            <div class="gallery">
+
+                <!-- BILDERNA SKAPAS AUTOMATISKT AV JAVASCRIPT -->
+
+            </div>
+
+
+            <button
+                class="gallery-button right"
+                onclick="flyttaBild(1)">
+                ❯
+            </button>
+
+        </div>
+
+
+        <p class="gallery-help">
+            ← Dra åt sidan → eller använd knapparna
+        </p>
+
+    </section>
+
+
+    <!-- =========================
+         BREV
+    ========================== -->
+
+    <section id="brev" class="letter-section">
+
+        <div class="letter">
+
+            <p class="small-text">
+                Till dig ❤️
+            </p>
+
+            <h2>
+                Ett litet brev
+            </h2>
+
+            <p>
+                Jag ville skapa den här sidan för att samla
+                några av våra finaste minnen på ett ställe.
+            </p>
+
+            <p>
+                Tack för alla fina stunder. ❤️
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ÖVERRASKNING
+    ========================== -->
+
+    <section class="surprise-section">
+
+        <h2>
+            En sista sak... 👀
+        </h2>
+
+        <p>
+            Jag har sparat något här.
+        </p>
+
+        <button onclick="visaOverraskning()">
+            Öppna 🎁
+        </button>
+
+        <div
+            id="hemligtMeddelande"
+            class="hidden-message">
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            Gjord med ❤️
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
