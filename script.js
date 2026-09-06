@@ -1,138 +1,124 @@
-// =========================
-// GALLERI
-// =========================
-
 const gallery = document.querySelector(".gallery");
 
-
-// =========================
-// SKAPA 41 BILDER + 2 VIDEOS
-// =========================
-
-for (let i = 1; i <= 41; i++) {
+if (gallery) {
 
     // =========================
-    // BILD
+    // 41 BILDER
     // =========================
 
-    const card = document.createElement("div");
-    card.className = "photo-card";
+    for (let i = 1; i <= 41; i++) {
 
-    const image = document.createElement("img");
+        const card = document.createElement("div");
+        card.className = "photo-card";
 
-    // Bilderna ligger direkt i huvudmappen
-    image.src = "bild" + i + ".jpg";
-    image.alt = "Minne " + i;
+        const image = document.createElement("img");
 
-    card.appendChild(image);
-    gallery.appendChild(card);
+        image.src = "./bild" + i + ".jpg";
+        image.alt = "Minne " + i;
+
+        card.appendChild(image);
+        gallery.appendChild(card);
 
 
-    // =========================
-    // VIDEO 1 EFTER BILD 2
-    // =========================
+        // =========================
+        // VIDEO 1 EFTER BILD 2
+        // =========================
 
-    if (i === 2) {
+        if (i === 2) {
 
-        const videoCard = document.createElement("div");
-        videoCard.className = "photo-card";
+            const videoCard = document.createElement("div");
+            videoCard.className = "photo-card";
 
-        const video = document.createElement("video");
+            const video = document.createElement("video");
 
-        video.src = "video1.mp4";
+            video.src = "./video1.mp4";
+            video.controls = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.preload = "metadata";
 
-        video.controls = true;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
+            videoCard.appendChild(video);
+            gallery.appendChild(videoCard);
+        }
 
-        videoCard.appendChild(video);
-        gallery.appendChild(videoCard);
+
+        // =========================
+        // VIDEO 2 EFTER BILD 20
+        // =========================
+
+        if (i === 20) {
+
+            const videoCard = document.createElement("div");
+            videoCard.className = "photo-card";
+
+            const video = document.createElement("video");
+
+            video.src = "./video2.mp4";
+            video.controls = true;
+            video.muted = true;
+            video.loop = true;
+            video.playsInline = true;
+            video.preload = "metadata";
+
+            videoCard.appendChild(video);
+            gallery.appendChild(videoCard);
+        }
     }
 
 
     // =========================
-    // VIDEO 2 EFTER BILD 20
+    // PILAR
     // =========================
 
-    if (i === 20) {
+    window.flyttaBild = function(riktning) {
 
-        const videoCard = document.createElement("div");
-        videoCard.className = "photo-card";
+        const bild = document.querySelector(".photo-card");
 
-        const video = document.createElement("video");
+        if (!bild) return;
 
-        video.src = "video2.mp4";
+        const avstand = bild.offsetWidth + 20;
 
-        video.controls = true;
-        video.muted = true;
-        video.loop = true;
-        video.playsInline = true;
-
-        videoCard.appendChild(video);
-        gallery.appendChild(videoCard);
-    }
-}
+        gallery.scrollBy({
+            left: avstand * riktning,
+            behavior: "smooth"
+        });
+    };
 
 
-// =========================
-// FLYTTA GALLERIET
-// =========================
+    // =========================
+    // AUTOPLAY VIDEO
+    // =========================
 
-function flyttaBild(riktning) {
+    const videos = document.querySelectorAll(".photo-card video");
 
-    const bild = document.querySelector(".photo-card");
+    const videoObserver = new IntersectionObserver(
+        (entries) => {
 
-    if (!bild) {
-        return;
-    }
+            entries.forEach((entry) => {
 
-    const avstand = bild.offsetWidth + 20;
+                const video = entry.target;
 
-    gallery.scrollBy({
-        left: avstand * riktning,
-        behavior: "smooth"
+                if (entry.isIntersecting) {
+
+                    video.play().catch(() => {});
+
+                } else {
+
+                    video.pause();
+                }
+            });
+
+        },
+        {
+            threshold: 0.6
+        }
+    );
+
+    videos.forEach((video) => {
+        videoObserver.observe(video);
     });
 }
-
-
-// =========================
-// AUTOPLAY FÖR VIDEOS
-// =========================
-
-const videos = document.querySelectorAll(".photo-card video");
-
-const videoObserver = new IntersectionObserver(
-    (entries) => {
-
-        entries.forEach((entry) => {
-
-            const video = entry.target;
-
-            if (entry.isIntersecting) {
-
-                video.play().catch(() => {
-                    // Webbläsaren kan blockera autoplay
-                });
-
-            } else {
-
-                video.pause();
-
-            }
-
-        });
-
-    },
-    {
-        threshold: 0.7
-    }
-);
-
-
-videos.forEach((video) => {
-    videoObserver.observe(video);
-});
 
 
 // =========================
@@ -148,7 +134,6 @@ function visaHistoria() {
         minnen.scrollIntoView({
             behavior: "smooth"
         });
-
     }
 }
 
@@ -168,6 +153,5 @@ function visaOverraskning() {
             "Du betyder väldigt mycket för mig ❤️";
 
         meddelande.classList.add("show");
-
     }
 }
