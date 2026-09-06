@@ -1,41 +1,60 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Amr & Rosa ❤️ Våra minnen</title>
-
     <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    <header>
-        <h1>Amr & Rosa ❤️</h1>
-        <p>Vår historia och våra finaste minnen</p>
+    <nav class="navbar">
+        <div class="logo">Amr & Rosa ❤️</div>
 
-        <button onclick="visaHistoria()">
-            Våra minnen 💕
-        </button>
+        <div class="nav-links">
+            <a href="#hem">Hem</a>
+            <a href="#minnen">Minnen</a>
+            <a href="#bilder">Bilder</a>
+            <a href="#brev">Till Rosa</a>
+        </div>
+    </nav>
 
-        <button onclick="visaOverraskning()">
-            En liten överraskning 🎁
-        </button>
-    </header>
 
-    <main>
+    <section class="hero" id="hem">
+        <div class="hero-content">
 
-        <section class="intro">
-            <h2>Våra minnen 💕</h2>
+            <div class="small-text">VÅR HISTORIA</div>
 
-            <p>
-                Några av de stunder jag aldrig vill glömma.
+            <h1>Amr & Rosa ❤️</h1>
+
+            <p class="intro">
+                En plats för våra finaste minnen,
+                stunder och allt vi har upplevt tillsammans.
             </p>
 
-            <p class="datum">
-                12 augusti 2025
-            </p>
+            <button onclick="visaHistoria()">
+                Våra minnen 💕
+            </button>
+
+        </div>
+    </section>
+
+
+    <section class="section" id="minnen">
+
+        <h2>Våra minnen 💕</h2>
+
+        <p class="section-intro">
+            Några av de stunder jag aldrig vill glömma.
+        </p>
+
+        <div class="memory">
+
+            <div class="datum">
+                12 AUGUSTI 2025
+            </div>
 
             <h3>Vårt första speciella minne 💕</h3>
 
@@ -43,37 +62,48 @@
                 Här börjar vår historia. En dag som blev början på
                 många fina minnen tillsammans.
             </p>
-        </section>
+
+        </div>
+
+    </section>
 
 
-        <section id="minnen">
+    <section class="gallery-section" id="bilder">
 
-            <h2>Alla våra bilder 📸</h2>
+        <h2>Alla våra bilder 📸</h2>
 
-            <p class="scroll-text">
-                Svep åt sidan för att se alla våra minnen ❤️
-            </p>
+        <p class="section-intro">
+            Våra finaste stunder tillsammans ❤️
+        </p>
 
-            <div class="gallery">
+        <div class="gallery-wrapper">
 
-                <!-- Bilder och videos skapas automatiskt av JavaScript -->
+            <button
+                class="gallery-button left"
+                onclick="flyttaBild(-1)">
+                ←
+            </button>
 
-            </div>
+            <div class="gallery"></div>
 
-            <div class="buttons">
-                <button onclick="flyttaBild(-1)">
-                    ← Föregående
-                </button>
+            <button
+                class="gallery-button right"
+                onclick="flyttaBild(1)">
+                →
+            </button>
 
-                <button onclick="flyttaBild(1)">
-                    Nästa →
-                </button>
-            </div>
+        </div>
 
-        </section>
+        <p class="gallery-help">
+            Svep åt sidan eller använd pilarna ❤️
+        </p>
+
+    </section>
 
 
-        <section class="message">
+    <section class="letter-section" id="brev">
+
+        <div class="letter">
 
             <h2>❤️ Till Rosa ❤️</h2>
 
@@ -86,12 +116,28 @@
                 Du är en väldigt viktig person för mig ❤️
             </p>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <div id="hemligtMeddelande"></div>
+    <section class="surprise-section">
 
-    </main>
+        <h2>En liten överraskning 🎁</h2>
+
+        <p>
+            Det finns ett litet meddelande till dig...
+        </p>
+
+        <button onclick="visaOverraskning()">
+            Öppna ❤️
+        </button>
+
+        <div class="hidden-message" id="hemligtMeddelande">
+            Du betyder väldigt mycket för mig ❤️
+        </div>
+
+    </section>
 
 
     <footer>
