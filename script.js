@@ -2,10 +2,6 @@ const gallery = document.querySelector(".gallery");
 
 if (gallery) {
 
-    // =========================
-    // 41 BILDER
-    // =========================
-
     for (let i = 1; i <= 41; i++) {
 
         const card = document.createElement("div");
@@ -19,11 +15,7 @@ if (gallery) {
         card.appendChild(image);
         gallery.appendChild(card);
 
-
-        // =========================
-        // VIDEO 1 EFTER BILD 2
-        // =========================
-
+        // Video 1 efter bild 2
         if (i === 2) {
 
             const videoCard = document.createElement("div");
@@ -36,17 +28,12 @@ if (gallery) {
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
-            video.preload = "metadata";
 
             videoCard.appendChild(video);
             gallery.appendChild(videoCard);
         }
 
-
-        // =========================
-        // VIDEO 2 EFTER BILD 20
-        // =========================
-
+        // Video 2 efter bild 20
         if (i === 20) {
 
             const videoCard = document.createElement("div");
@@ -59,7 +46,6 @@ if (gallery) {
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
-            video.preload = "metadata";
 
             videoCard.appendChild(video);
             gallery.appendChild(videoCard);
@@ -67,10 +53,7 @@ if (gallery) {
     }
 
 
-    // =========================
-    // PILAR
-    // =========================
-
+    // Piltangenterna
     window.flyttaBild = function(riktning) {
 
         const bild = document.querySelector(".photo-card");
@@ -86,10 +69,7 @@ if (gallery) {
     };
 
 
-    // =========================
-    // AUTOPLAY VIDEO
-    // =========================
-
+    // Spela video automatiskt när den syns
     const videos = document.querySelectorAll(".photo-card video");
 
     const videoObserver = new IntersectionObserver(
@@ -100,13 +80,11 @@ if (gallery) {
                 const video = entry.target;
 
                 if (entry.isIntersecting) {
-
                     video.play().catch(() => {});
-
                 } else {
-
                     video.pause();
                 }
+
             });
 
         },
@@ -115,22 +93,19 @@ if (gallery) {
         }
     );
 
+
     videos.forEach((video) => {
         videoObserver.observe(video);
     });
 }
 
 
-// =========================
-// STARTSIDA
-// =========================
-
+// Historia-knappen
 function visaHistoria() {
 
     const minnen = document.getElementById("minnen");
 
     if (minnen) {
-
         minnen.scrollIntoView({
             behavior: "smooth"
         });
@@ -138,10 +113,7 @@ function visaHistoria() {
 }
 
 
-// =========================
-// ÖVERRASKNING
-// =========================
-
+// Överraskningsknappen
 function visaOverraskning() {
 
     const meddelande =
