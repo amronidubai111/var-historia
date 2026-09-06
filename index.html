@@ -1,199 +1,236 @@
 <!DOCTYPE html>
 <html lang="sv">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Vår historia ❤️</title>
+    <title>Amr & Rosa ❤️ Våra minnen</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-    <nav class="navbar">
-
+    <!-- NAVBAR -->
+    <header class="navbar">
         <div class="logo">
-            Vår historia ❤️
+            Amr & Rosa ❤️
         </div>
 
-        <div class="nav-links">
-            <a href="#hem">Hem</a>
+        <nav class="nav-links">
             <a href="#minnen">Minnen</a>
             <a href="#bilder">Bilder</a>
             <a href="#brev">Brev</a>
-        </div>
-
-    </nav>
-
-
-    <header id="hem" class="hero">
-
-        <div class="hero-content">
-
-            <p class="small-text">
-                En liten plats för oss
-            </p>
-
-            <h1>
-                Vår historia ❤️
-            </h1>
-
-            <p class="intro">
-                Alla våra finaste minnen,
-                samlade på ett ställe.
-            </p>
-
-            <button onclick="visaHistoria()">
-                Börja vår resa 💌
-            </button>
-
-        </div>
-
+            <a href="#overraskning">Överraskning</a>
+        </nav>
     </header>
 
 
-    <section id="minnen" class="section">
+    <!-- STARTSIDA -->
+    <section class="hero">
 
-        <h2>Våra minnen 💕</h2>
+        <div class="hero-content">
 
-        <p class="section-intro">
-            Några av de stunder jag aldrig vill glömma.
-        </p>
+            <div class="small-text">
+                VÅR HISTORIA
+            </div>
 
-        <div class="memory">
+            <h1>
+                Amr & Rosa ❤️
+            </h1>
 
-            <p class="datum">
-                12 augusti 2025
+            <p class="intro">
+                En liten plats för våra finaste minnen.
             </p>
 
-            <h3>
-                Vårt första speciella minne 💕
-            </h3>
-
-            <p>
-                Här kan du skriva om ert första speciella
-                minne och varför det betyder så mycket.
-            </p>
+            <button onclick="visaHistoria()">
+                Våra minnen 💕
+            </button>
 
         </div>
 
     </section>
 
 
-    <!-- =========================
-         BILDER
-    ========================== -->
+    <main>
 
-    <section id="bilder" class="gallery-section">
+        <!-- MINNESKORT -->
+        <section class="section" id="minnen">
 
-        <h2>Våra bilder 📸</h2>
+            <h2>
+                Våra minnen 💕
+            </h2>
 
-        <p class="section-intro">
-            41 bilder från vår historia ❤️
-        </p>
-
-
-        <div class="gallery-wrapper">
-
-            <button
-                class="gallery-button left"
-                onclick="flyttaBild(-1)">
-                ❮
-            </button>
+            <p class="section-intro">
+                Några av de stunder jag aldrig vill glömma.
+            </p>
 
 
-            <div class="gallery">
+            <!-- MINNESKORT 1 -->
+            <div class="memory">
 
-                <!-- BILDERNA SKAPAS AUTOMATISKT AV JAVASCRIPT -->
+                <div class="datum">
+                    12 AUGUSTI 2025
+                </div>
+
+                <h3>
+                    Vårt första speciella minne 💕
+                </h3>
+
+                <p>
+                    Här börjar vår historia. En dag som blev början
+                    på många fina minnen tillsammans.
+                </p>
 
             </div>
 
 
-            <button
-                class="gallery-button right"
-                onclick="flyttaBild(1)">
-                ❯
-            </button>
+            <!-- MINNESKORT 2 -->
+            <div class="memory">
 
-        </div>
+                <div class="datum">
+                    ETT FINT MINNE ❤️
+                </div>
+
+                <h3>
+                    En dag att minnas
+                </h3>
+
+                <p>
+                    Här kan du skriva om ett annat speciellt minne
+                    som betyder mycket för oss.
+                </p>
+
+            </div>
 
 
-        <p class="gallery-help">
-            ← Dra åt sidan → eller använd knapparna
-        </p>
+            <!-- MINNESKORT 3 -->
+            <div class="memory">
 
-    </section>
+                <div class="datum">
+                    ÄNNU ETT MINNE 💕
+                </div>
+
+                <h3>
+                    Våra fina stunder
+                </h3>
+
+                <p>
+                    Alla små stunder, skratt och fina ögonblick
+                    som vi aldrig vill glömma.
+                </p>
+
+            </div>
+
+        </section>
 
 
-    <!-- =========================
-         BREV
-    ========================== -->
-
-    <section id="brev" class="letter-section">
-
-        <div class="letter">
-
-            <p class="small-text">
-                Till dig ❤️
-            </p>
+        <!-- ALLA BILDER -->
+        <section class="gallery-section" id="bilder">
 
             <h2>
-                Ett litet brev
+                Alla våra bilder 📸
             </h2>
 
-            <p>
-                Jag ville skapa den här sidan för att samla
-                några av våra finaste minnen på ett ställe.
+            <p class="gallery-help">
+                Svep åt sidan för att se alla våra minnen ❤️
             </p>
 
-            <p>
-                Tack för alla fina stunder. ❤️
-            </p>
 
-        </div>
+            <div class="gallery-wrapper">
 
-    </section>
-
-
-    <!-- =========================
-         ÖVERRASKNING
-    ========================== -->
-
-    <section class="surprise-section">
-
-        <h2>
-            En sista sak... 👀
-        </h2>
-
-        <p>
-            Jag har sparat något här.
-        </p>
-
-        <button onclick="visaOverraskning()">
-            Öppna 🎁
-        </button>
-
-        <div
-            id="hemligtMeddelande"
-            class="hidden-message">
-        </div>
-
-    </section>
+                <button
+                    class="gallery-button left"
+                    onclick="flyttaBild(-1)"
+                >
+                    ←
+                </button>
 
 
+                <div class="gallery">
+                    <!-- Bilder och videos läggs in automatiskt med JavaScript -->
+                </div>
+
+
+                <button
+                    class="gallery-button right"
+                    onclick="flyttaBild(1)"
+                >
+                    →
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- BREV -->
+        <section class="letter-section" id="brev">
+
+            <div class="letter">
+
+                <h2>
+                    ❤️ Till Rosa ❤️
+                </h2>
+
+                <p>
+                    Tack för alla fina stunder, skratt och minnen.
+                </p>
+
+                <p>
+                    Jag hoppas att vi får skapa många fler
+                    tillsammans.
+                </p>
+
+                <p>
+                    Du är en väldigt viktig person för mig ❤️
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ÖVERRASKNING -->
+        <section
+            class="surprise-section"
+            id="overraskning"
+        >
+
+            <h2>
+                En liten överraskning 🎁
+            </h2>
+
+            <button onclick="visaOverraskning()">
+                Öppna ❤️
+            </button>
+
+            <div
+                id="hemligtMeddelande"
+                class="hidden-message"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
     <footer>
 
         <p>
-            Gjord med ❤️
+            Amr & Rosa ❤️
+        </p>
+
+        <p>
+            Vår historia började den 12 augusti 2025.
         </p>
 
     </footer>
 
 
-    <script src="script.js"></script>
+    <!-- JAVASCRIPT -->
+    <script src="./script.js"></script>
 
 </body>
-
 </html>
